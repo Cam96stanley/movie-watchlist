@@ -1,4 +1,29 @@
-body, html {
-    margin: 0;
-    padding: 0;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+
+.header {
+  background-image: url(assets/heading.png);
+  height: 13em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 2.625rem;
+}
+
+.header a {
+  font-size: 0.875em;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
 }
