@@ -27,3 +27,57 @@ h1 {
   font-weight: 700;
   cursor: pointer;
 }
+
+.search-section {
+  position: relative;
+}
+
+.search-container {
+  position: absolute;
+  bottom: -1.7em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 2;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+}
+
+.search-wrap {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 5px 0 0 5px;
+  background-color: #2e2e2f;
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+.search-icon {
+  padding: 10px;
+  columns: gray;
+  border: none;
+}
+
+.search {
+  padding: 10px;
+  background-color: #2e2e2f;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  color: #9ca3af;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex: 1;
+}
+
+.search-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #4b4b4b;
+  color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
