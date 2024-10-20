@@ -7,6 +7,8 @@ html {
   color: #ffffff;
 }
 
+/* Header section */
+
 .header {
   background-image: url(assets/heading.png);
   height: 13em;
@@ -27,6 +29,8 @@ h1 {
   font-weight: 700;
   cursor: pointer;
 }
+
+/* Search bar */
 
 .search-section {
   position: relative;
