@@ -2,20 +2,43 @@ const searchInput = document.getElementById("search-input");
 const searchBtn = document.getElementById("search-btn");
 const movieContainer = document.getElementById("movies-container");
 
+movieContainer.innerHTML = `
+    <div class="start-exploring">
+        <img src="assets/movie-icon.png"/>
+        <p>Start exploring</p>
+    </div>
+`;
+
 searchBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  movieContainer.innerHTML = "";
-  getMovies(searchInput);
+  if (searchInput.value) {
+    movieContainer.innerHTML = "";
+    getMovies(searchInput);
+  } else {
+    movieContainer.innerHTML = `
+        <div class="start-exploring">
+            <img src="assets/movie-icon.png"/>
+            <p>Start exploring</p>
+        </div>
+    `;
+  }
 });
 
 function getMovies(searchedMovie) {
   fetch(`http://www.omdbapi.com/?apikey=f490edf1&s=${searchedMovie.value}`)
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       if (data.Response === "True") {
         data.Search.forEach((movie) => {
           getMovieDetails(movie.imdbID);
         });
+      } else {
+        movieContainer.innerHTML = `
+            <div class="no-response">
+               <p>These aren't the droid you're looking for...</p> 
+            </div>
+        `;
       }
     });
 }

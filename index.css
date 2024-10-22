@@ -99,6 +99,16 @@ h1 {
   border-bottom: 1px solid #2c2c2c;
 }
 
+.start-exploring {
+  text-align: center;
+  margin: 200px 0;
+}
+
+.start-exploring p {
+  font-size: 18px;
+  color: #2e2e2f;
+}
+
 .movie-details {
   padding: 21px;
 }
@@ -119,12 +129,11 @@ h1 {
 
 .rating {
   font-size: 12px;
-  margin-left: ;
+  margin-left: 8px;
 }
 
 .watch-details {
   display: flex;
-  align-items: center;
 }
 
 .watch-details p {
@@ -147,4 +156,15 @@ h1 {
 .summary {
   font-size: 14px;
   max-width: 60ch;
+}
+
+.no-response {
+  text-align: center;
+  margin: 200px 0;
+}
+
+.no-response p {
+  font-size: 18px;
+  font-weight: 700;
+  color: #787878;
 }
