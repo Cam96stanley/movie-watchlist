@@ -141,7 +141,7 @@ h1 {
   margin: 0;
 }
 
-#watchlist-btn {
+.add-btn {
   font-size: 14px;
   margin-left: 15px;
   color: #ffffff;
@@ -149,7 +149,7 @@ h1 {
   cursor: pointer;
 }
 
-#watchlist-btn img {
+.add-btn img {
   width: 12px;
 }
 

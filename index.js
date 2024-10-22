@@ -28,7 +28,6 @@ function getMovies(searchedMovie) {
   fetch(`http://www.omdbapi.com/?apikey=f490edf1&s=${searchedMovie.value}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       if (data.Response === "True") {
         data.Search.forEach((movie) => {
           getMovieDetails(movie.imdbID);
@@ -36,7 +35,7 @@ function getMovies(searchedMovie) {
       } else {
         movieContainer.innerHTML = `
             <div class="no-response">
-               <p>These aren't the droid you're looking for...</p> 
+               <p>These aren't the droids you're looking for...</p> 
             </div>
         `;
       }
@@ -65,7 +64,7 @@ function render(data) {
             </div>
             <div class="watch-details">
                 <p>${data.Runtime} ${data.Genre}</p>
-                <p><a href="#" id="watchlist-btn">
+                <p><a id='watchlist-btn' class="add-btn">
                     <img src="assets/add-icon.png"/>
                     Watchlist
                 </a></p>
