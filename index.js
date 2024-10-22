@@ -4,6 +4,7 @@ const movieContainer = document.getElementById("movies-container");
 
 searchBtn.addEventListener("click", function (e) {
   e.preventDefault();
+  movieContainer.innerHTML = "";
   getMovies(searchInput);
 });
 
@@ -25,6 +26,7 @@ function getMovieDetails(id) {
     .then((data) => {
       console.log(data);
       render(data);
+      searchInput.value = "";
     });
 }
 
