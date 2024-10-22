@@ -85,3 +85,66 @@ h1 {
   cursor: pointer;
   font-size: 0.8rem;
 }
+
+/* Movies Section */
+
+#movies-container {
+  margin: 44px;
+}
+
+.movie-div {
+  display: flex;
+  align-items: center;
+  padding: 1.25em 0;
+  border-bottom: 1px solid #2c2c2c;
+}
+
+.movie-details {
+  padding: 21px;
+}
+
+.movie-poster {
+  width: 6.25em;
+  height: 9.188em;
+}
+
+.title-details {
+  margin-bottom: 8px;
+}
+
+.title {
+  font-size: 18px;
+  margin: 0;
+}
+
+.rating {
+  font-size: 12px;
+  margin-left: ;
+}
+
+.watch-details {
+  display: flex;
+  align-items: center;
+}
+
+.watch-details p {
+  font-size: 12px;
+  margin: 0;
+}
+
+#watchlist-btn {
+  font-size: 14px;
+  margin-left: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#watchlist-btn img {
+  width: 12px;
+}
+
+.summary {
+  font-size: 14px;
+  max-width: 60ch;
+}
