@@ -46,7 +46,6 @@ function getMovieDetails(id) {
   fetch(`http://www.omdbapi.com/?apikey=f490edf1&i=${id}`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       render(data);
       searchInput.value = "";
     });
@@ -64,7 +63,7 @@ function render(data) {
             </div>
             <div class="watch-details">
                 <p>${data.Runtime} ${data.Genre}</p>
-                <p><a id='watchlist-btn' class="add-btn">
+                <p><a id='watchlist-btn-${data.imdbID}' class="add-btn">
                     <img src="assets/add-icon.png"/>
                     Watchlist
                 </a></p>
@@ -75,4 +74,42 @@ function render(data) {
         </div>
     </div>
     `;
+}
+
+document.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (e.target.closest(".add-btn")) {
+    const addBtn = e.target.closest(".add-btn");
+    const movieId = addBtn.id.replace("watchlist-btn-", "");
+    addToWatchlist(movieId);
+  }
+});
+
+function createdWatchlistItem(movie) {
+  return {
+    id: movie.imdbID,
+    poster: movie.Poster,
+    title: movie.Title,
+    rating: movie.Ratings[0].value,
+    runtime: movie.Runtime,
+    genre: movie.Genre,
+    plot: movie.Plot,
+  };
+}
+
+function addToWatchlist(movieId) {
+  fetch(`http://www.omdbapi.com/?apikey=f490edf1&i=${movieId}`)
+    .then((res) => res.json())
+    .then((data) => {
+      if (!localStorage.getItem("movies")) {
+        localStorage.setItem("movies", JSON.stringify([]));
+      }
+
+      const moviesData = localStorage.getItem("movies");
+      const movieDataArray = JSON.parse(moviesData);
+
+      movieDataArray.push(data);
+      localStorage.setItem("movies", JSON.stringify(movieDataArray));
+    });
+  renderWatchlist(data);
 }
