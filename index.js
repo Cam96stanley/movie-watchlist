@@ -85,18 +85,6 @@ document.addEventListener("click", function (e) {
   }
 });
 
-function createdWatchlistItem(movie) {
-  return {
-    id: movie.imdbID,
-    poster: movie.Poster,
-    title: movie.Title,
-    rating: movie.Ratings[0].value,
-    runtime: movie.Runtime,
-    genre: movie.Genre,
-    plot: movie.Plot,
-  };
-}
-
 function addToWatchlist(movieId) {
   fetch(`http://www.omdbapi.com/?apikey=f490edf1&i=${movieId}`)
     .then((res) => res.json())
