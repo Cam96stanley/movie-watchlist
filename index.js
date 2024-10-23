@@ -99,5 +99,4 @@ function addToWatchlist(movieId) {
       movieDataArray.push(data);
       localStorage.setItem("movies", JSON.stringify(movieDataArray));
     });
-  renderWatchlist(data);
 }
