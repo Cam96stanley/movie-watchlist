@@ -77,7 +77,6 @@ function render(data) {
 }
 
 document.addEventListener("click", function (e) {
-  e.preventDefault();
   if (e.target.closest(".add-btn")) {
     const addBtn = e.target.closest(".add-btn");
     const movieId = addBtn.id.replace("watchlist-btn-", "");
