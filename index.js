@@ -35,7 +35,7 @@ function getMovies(searchedMovie) {
       } else {
         movieContainer.innerHTML = `
             <div class="no-response">
-               <p>These aren't the droids you're looking for...</p> 
+               <p>These aren't the droids you're looking for...</p>
             </div>
         `;
       }
@@ -59,7 +59,7 @@ function render(data) {
         </div>
         <div class="movie-details">
             <div class="title-details">
-                <p class="title">${data.Title} <span class="rating">⭐️ ${data.Ratings[0].Value}</span></p>
+                <p class="title">${data.Title}<span class="rating">⭐️ ${data.Ratings[0].Value}</span></p>
             </div>
             <div class="watch-details">
                 <p>${data.Runtime} ${data.Genre}</p>
@@ -88,14 +88,15 @@ function addToWatchlist(movieId) {
   fetch(`http://www.omdbapi.com/?apikey=f490edf1&i=${movieId}`)
     .then((res) => res.json())
     .then((data) => {
-      if (!localStorage.getItem("movies")) {
-        localStorage.setItem("movies", JSON.stringify([]));
+      let watchlist = localStorage.getItem("movies");
+      if (!watchlist) {
+        watchlist = {};
+      } else {
+        watchlist = JSON.parse(watchlist);
       }
 
-      const moviesData = localStorage.getItem("movies");
-      const movieDataArray = JSON.parse(moviesData);
+      watchlist[data.imdbID] = data;
 
-      movieDataArray.push(data);
-      localStorage.setItem("movies", JSON.stringify(movieDataArray));
+      localStorage.setItem("movies", JSON.stringify(watchlist));
     });
 }

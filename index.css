@@ -141,7 +141,8 @@ h1 {
   margin: 0;
 }
 
-.add-btn {
+.add-btn,
+.remove-btn {
   font-size: 14px;
   margin-left: 15px;
   color: #ffffff;
