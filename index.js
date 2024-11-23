@@ -25,7 +25,7 @@ searchBtn.addEventListener("click", function (e) {
 });
 
 function getMovies(searchedMovie) {
-  fetch(`http://www.omdbapi.com/?apikey=f490edf1&s=${searchedMovie.value}`)
+  fetch(`https://www.omdbapi.com/?apikey=f490edf1&s=${searchedMovie.value}`)
     .then((res) => res.json())
     .then((data) => {
       if (data.Response === "True") {
@@ -43,7 +43,7 @@ function getMovies(searchedMovie) {
 }
 
 function getMovieDetails(id) {
-  fetch(`http://www.omdbapi.com/?apikey=f490edf1&i=${id}`)
+  fetch(`https://www.omdbapi.com/?apikey=f490edf1&i=${id}`)
     .then((res) => res.json())
     .then((data) => {
       render(data);
@@ -85,7 +85,7 @@ document.addEventListener("click", function (e) {
 });
 
 function addToWatchlist(movieId) {
-  fetch(`http://www.omdbapi.com/?apikey=f490edf1&i=${movieId}`)
+  fetch(`https://www.omdbapi.com/?apikey=f490edf1&i=${movieId}`)
     .then((res) => res.json())
     .then((data) => {
       let watchlist = localStorage.getItem("movies");
